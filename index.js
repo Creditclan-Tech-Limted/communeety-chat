@@ -17,7 +17,7 @@ const io = new Server(httpServer, {
 // app.use(cors());
 
 const corsConfig = {
-  origin: '',
+  origin: '*',
   // credentials: true,
   methods: ['GET', 'POST',]
 }
