@@ -14,28 +14,28 @@ const io = new Server(httpServer, {
   },
 });
 
-// app.use(cors());
+app.use(cors());
 
-const corsConfig = {
-  origin: '',
-  // credentials: true,
-  methods: ['GET', 'POST',]
-}
-app.use(cors(corsConfig))
-app.options("", cors(corsConfig))
+// const corsConfig = {
+//   origin: '',
+//   // credentials: true,
+//   methods: ['GET', 'POST',]
+// }
+// app.use(cors(corsConfig))
+// app.options("", cors(corsConfig))
 
 
 
 // Middleware to set CORS headers
-app.use((req, res, next) => {
-  // Allow requests from any origin
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  // Allow certain headers to be sent
-  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  // Allow certain HTTP methods
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  next();
-});
+// app.use((req, res, next) => {
+//   // Allow requests from any origin
+//   res.setHeader('Access-Control-Allow-Origin', '*');
+//   // Allow certain headers to be sent
+//   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+//   // Allow certain HTTP methods
+//   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+//   next();
+// });
 
 
 
