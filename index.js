@@ -18,22 +18,11 @@ const io = new Server(httpServer, {
 
 const corsConfig = {
   origin: '',
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE']
+  // credentials: true,
+  methods: ['GET', 'POST',]
 }
 app.use(cors(corsConfig))
 app.options("", cors(corsConfig))
-
-
-
-
-
-
-
-
-
-
-
 
 
 
