@@ -28,10 +28,12 @@ app.use(cors());
 
 // Middleware to set CORS headers
 app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   // Allow requests from any origin
   res.setHeader('Access-Control-Allow-Origin', '*');
+  
+
   // Allow certain headers to be sent
-  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   // res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   // res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   // Allow certain HTTP methods
