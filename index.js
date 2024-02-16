@@ -5,6 +5,11 @@ import { Server } from "socket.io";
 
 const app = express();
 
+
+app.use(cors({ origin: '*' }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 const httpServer = createServer(app);
 
 const io = new Server(httpServer, {
@@ -14,7 +19,6 @@ const io = new Server(httpServer, {
   },
 });
 
-app.use(cors());
 
 
 
