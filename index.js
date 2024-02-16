@@ -6,7 +6,7 @@ import { Server } from "socket.io";
 const app = express();
 
 
-app.use(cors({ origin: '*' }));
+app.use(cors({ origin: '*', methods: ['GET', 'POST'], allowedHeaders: ['Content-Type', 'Authorization'] }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
