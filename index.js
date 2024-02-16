@@ -4,6 +4,14 @@ import { createServer } from "http";
 import { Server } from "socket.io";
 
 const app = express();
+const httpServer = createServer(app);
+
+const io = new Server(httpServer, {
+  cors: {
+    origin: "*",
+    // methods: ["GET", "POST"],
+  },
+});
 
 
 // app.use(cors({ origin: '*', methods: ['GET', 'POST'], allowedHeaders: ['Content-Type', 'Authorization'] }));
@@ -36,14 +44,6 @@ app.use(function (req, res, next) {
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-const httpServer = createServer(app);
-
-const io = new Server(httpServer, {
-  cors: {
-    origin: "*",
-    // methods: ["GET", "POST"],
-  },
-});
 
 
 
